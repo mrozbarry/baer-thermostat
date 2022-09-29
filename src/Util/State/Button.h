@@ -8,10 +8,10 @@ class Button {
 public:
   Button(int pin);
 
-  void update(uint32 now);
+  void onTick(unsigned long now);
 
   bool isPressed();
-  uint32 pressDuration(uint32 now);
+  unsigned long pressDuration(unsigned long now);
 
   bool wasReleasedThisFrame();
   bool wasPressed();
@@ -23,6 +23,6 @@ private:
   bool pressed;
   bool releasedThisFrame;
   PressType lastPress;
-  uint8 lastPressedAt;
+  unsigned long lastPressedAt;
 }
 

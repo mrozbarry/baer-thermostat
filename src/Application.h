@@ -12,7 +12,7 @@ public:
   Application();
   ~Application();
 
-  void onTick(uint32 now);
+  void onTick(unsigned long now);
 
   State state;
 }

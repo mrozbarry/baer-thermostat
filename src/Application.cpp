@@ -7,7 +7,7 @@ Application::Application()
 Application::~Application()
 {}
 
-void Application::onTick(uint32 now)
+void Application::onTick(unsigned long now)
 {
   this->state->update(now);
   this->render(&this->state);

@@ -7,13 +7,13 @@ State::State()
   . lcd()
 {}
 
-void State::onTick(uint32 now)
+void State::onTick(unsigned long now)
 {
   this->now = now;
 
-  this->buttons->up->update(this->now);
-  this->buttons->down->update(this->now);
-  this->buttons->left->update(this->now);
-  this->buttons->right->update(this->now);
-  this->buttons->select->update(this->now);
+  this->buttons->up->onTick(this->now);
+  this->buttons->down->onTick(this->now);
+  this->buttons->left->onTick(this->now);
+  this->buttons->right->onTick(this->now);
+  this->buttons->select->onTick(this->now);
 }

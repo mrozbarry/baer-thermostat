@@ -11,11 +11,11 @@ public:
   Sensor(int pin);
   ~Sensor();
 
-  float read(uint32 now);
+  float read(unsigned long now);
 
 private:
   int     pin;
-  uint32  lastReadAt;
+  unsigned long lastReadAt;
   float   value;
 }
 

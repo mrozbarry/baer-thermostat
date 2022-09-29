@@ -8,7 +8,7 @@ Button::Button(int pin)
   this->pin = pin;
 }
 
-void Button::update(uint32 now)
+void Button::onTick(unsigned long now)
 {
   bool prevPressed = this->pressed;
   this->releasedThisFrame = false;
@@ -40,7 +40,7 @@ bool Button::isPressed()
   return this->pressed;
 }
 
-uint32 Button pressDuration(uint32 now)
+unsigned long Button pressDuration(unsigned long now)
 {
   return this->pressed ? (now - this->lastPressedAt) : 0;
 }

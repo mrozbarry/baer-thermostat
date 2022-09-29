@@ -7,9 +7,9 @@ Sensor::Sensor(int pin)
   this->pin = pin;
 }
 
-float Sensor::read(uint32 now)
+float Sensor::read(unsigned long now)
 {
-  uint32 diff = now - this->lastReadAt;
+  unsigned long diff = now - this->lastReadAt;
   if (diff < 1000) {
     return this->value;
   }

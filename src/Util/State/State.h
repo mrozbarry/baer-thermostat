@@ -17,9 +17,9 @@ class State {
 public:
   State();
 
-  void onTick(uint32 now);
+  void onTick(unsigned long now);
 
-  uint32 now;
+  unsigned long now;
 
   Sensor outdoorTemp;
   Sensor indoorTemp;

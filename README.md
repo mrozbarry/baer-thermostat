@@ -2,7 +2,7 @@
 
 More like a framework for building pages, passing messages, and doing cool things.
 
-Also, this probably doesn't compile
+Also, this probably doesn't compile, unless it does, which so far, it does.
 
 ## Compile to run in terminal:
 

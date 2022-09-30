@@ -11,8 +11,12 @@ bool LCD::isTurnedOn()
   return false; // Not sure how you're checking this...
 }
 
+void LCD::turnOn()
+{
+  // TODO
+}
+
 void LCD::write(const char *text, int row, int col)
 {
-  // TODO: do other stuff
-  std::cout << text << std::endl;
+  std::cout << "[LCD{" << row << ',' << col << "}] " << text << std::endl;
 }

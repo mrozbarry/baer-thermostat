@@ -1,9 +1,9 @@
 #include "./Button.h"
 
 Button::Button(int pin)
-  : state(UNKNOWN)
+  : lastPress(UNKNOWN)
   , lastPressedAt(0)
-  , pressedThisFrame(false)
+  , releasedThisFrame(false)
 {
   this->pin = pin;
 }
@@ -40,7 +40,7 @@ bool Button::isPressed()
   return this->pressed;
 }
 
-unsigned long Button pressDuration(unsigned long now)
+unsigned long Button::pressDuration(unsigned long now)
 {
   return this->pressed ? (now - this->lastPressedAt) : 0;
 }
@@ -52,10 +52,10 @@ bool Button::wasReleasedThisFrame()
 
 bool Button::wasPressed()
 {
-  return this->releasedThisFrame && this->lastPress = PRESS;
+  return this->releasedThisFrame && this->lastPress == PRESS;
 }
 
 bool Button::wasLongPressed()
 {
-  return this->releasedThisFrame && this->lastPress = LONG_PRESS;
+  return this->releasedThisFrame && this->lastPress == LONG_PRESS;
 }

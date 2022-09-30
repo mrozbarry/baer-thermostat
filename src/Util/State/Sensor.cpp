@@ -7,6 +7,9 @@ Sensor::Sensor(int pin)
   this->pin = pin;
 }
 
+Sensor::~Sensor()
+{}
+
 float Sensor::read(unsigned long now)
 {
   unsigned long diff = now - this->lastReadAt;

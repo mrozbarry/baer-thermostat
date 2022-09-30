@@ -11,13 +11,17 @@ public:
 
   Page *stack(Page *other);
 
-  void render(State *state);
-  void dispatchMessage(Message *message);
-  void onMessage(Message *message);
+  void onTick(State *state);
+  void onRender(State *state);
+
+  virtual void tick(State *state);
+  virtual void render(State *state);
+
+  bool dispatchMessage(Message *message);
 
 protected:
   Page *root;
   Page *child;
-}
+};
 
 #endif

@@ -1,7 +1,7 @@
 #include "./Page.h"
 
 Page::Page(Page *root)
-  : child(null)
+  : child((Page *)0)
 {
   this->root = root;
 }
@@ -15,10 +15,6 @@ Page::~Page()
 
 Page *Page::stack(Page *other)
 {
-  if (!other->state) {
-    other->state = this->state;
-  }
-
   if (!this->child) {
     this->child = other;
     return this->child;
@@ -27,16 +23,32 @@ Page *Page::stack(Page *other)
   return this->child->stack(other);
 }
 
-void Page::render(State *state)
+void Page::onTick(State *state)
 {
   if (this->child) {
-    return this->child->render(state);
+    this->child->onTick(state);
+
+    return;
   }
+
+  this->tick(state);
+  this->render(state);
+
+  return;
 }
 
-void Page::onMessage(Message *message)
+void Page::onRender(State *state)
 {
   if (this->child) {
-    return this->child->onMessage(message);
+    return this->child->onRender(state);
   }
+  return this->render(state);
 }
+
+bool Page::dispatchMessage(Message *message)
+{
+  return this->root->dispatchMessage(message);
+}
+
+void Page::tick(State *state) {}
+void Page::render(State *state) {}

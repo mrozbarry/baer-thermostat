@@ -1,13 +1,17 @@
-#include "../Pages/Page.h"
+#include "../Util/State/State.h"
 
 #ifndef MESSAGES_MESSAGE_H
 #define MESSAGES_MESSAGE_H 1
 
-class Mesage
+class Page;
+
+class Message
 {
 public:
-  void execute(Page *page);
-}
+  Message();
+  virtual bool shouldDispatch(State *state);
+  virtual void execute(Page *page);
+};
 
 #endif
 

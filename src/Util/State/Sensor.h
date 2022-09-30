@@ -17,6 +17,6 @@ private:
   int     pin;
   unsigned long lastReadAt;
   float   value;
-}
+};
 
 #endif

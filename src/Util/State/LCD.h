@@ -7,8 +7,9 @@ public:
   LCD();
 
   bool isTurnedOn();
+  void turnOn();
 
   void write(const char *text, int row, int col);
-}
+};
 
 #endif

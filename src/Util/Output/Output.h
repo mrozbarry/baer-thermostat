@@ -3,7 +3,7 @@
 
 class Output {
 public:
-  void print(const char *line, unsigned int x = 0, unsigned int y = 0);
-}
+  void print(const char *line, int row, int col);
+};
 
 #endif

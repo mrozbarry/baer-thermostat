@@ -1,8 +1,11 @@
+#ifndef UTILS_STATE_BUTTON_H
+#define UTILS_STATE_BUTTON_H  1
+
 typedef enum {
   UNKNOWN,
   PRESS,
-  LONG_PRESS,
-} PressType
+  LONG_PRESS
+} PressType;
 
 class Button {
 public:
@@ -24,5 +27,6 @@ private:
   bool releasedThisFrame;
   PressType lastPress;
   unsigned long lastPressedAt;
-}
+};
 
+#endif
